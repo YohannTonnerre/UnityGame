@@ -7,7 +7,7 @@ public class BallBehavior : MonoBehaviour
 
     public float m_speed = 1000f;
     public Rigidbody2D m_rb2D;
-    public float BulletDestroyTimer = 0.2f;
+    public float BulletDestroyTimer = 1f;
 
 
 
