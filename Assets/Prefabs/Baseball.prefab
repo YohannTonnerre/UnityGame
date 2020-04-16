@@ -135,3 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 1000
   m_rb2D: {fileID: 1303448020680473681}
+  BulletDestroyTimer: 1

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\BallBehavior.cs" />
     <Compile Include="Assets\CalculatorManager.cs" />
+    <Compile Include="Assets\EnemyBehavior.cs" />
     <Compile Include="Assets\FirstScript.cs" />
     <Compile Include="Assets\PlayerBehavior.cs" />
     <Reference Include="Unity.Timeline.Editor">
