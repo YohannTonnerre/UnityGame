@@ -7,13 +7,36 @@ public class BallBehavior : MonoBehaviour
 
     public float m_speed = 1000f;
     public Rigidbody2D m_rb2D;
+    public float BulletDestroyTimer = 0.2f;
 
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        m_rb2D.MovePosition(m_rb2D.position + Time.fixedDeltaTime * m_speed * Vector2.up);
+        if (Input.GetAxis("Horizontal") < 0f) { 
+            m_rb2D.MovePosition(m_rb2D.position + Time.fixedDeltaTime * m_speed * Vector2.left);
+            Destroy(gameObject, BulletDestroyTimer);
+        }
+
+        if (Input.GetAxis("Horizontal") > 0f)
+        {
+            m_rb2D.MovePosition(m_rb2D.position + Time.fixedDeltaTime * m_speed * Vector2.right);
+            Destroy(gameObject, BulletDestroyTimer);
+
+        }
+
+        if (Input.GetAxis("Vertical") < 0f)
+        {
+            m_rb2D.MovePosition(m_rb2D.position + Time.fixedDeltaTime * m_speed * Vector2.down);
+            Destroy(gameObject, BulletDestroyTimer);
+        }
+
+        if (Input.GetAxis("Vertical") > 0f)
+        {
+            m_rb2D.MovePosition(m_rb2D.position + Time.fixedDeltaTime * m_speed * Vector2.up);
+            Destroy(gameObject, BulletDestroyTimer);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
